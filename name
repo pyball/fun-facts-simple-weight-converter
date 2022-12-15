@@ -1,0 +1,21 @@
+weight = float(input("Enter Weight: "))
+unit = input("(K)g or (L)bs? ")
+fun = input("Do you like fun facts? (Y)es or (N)o? ")
+if fun.upper() == "N":
+    print("You're no fun :/")
+if unit.upper() == "K" and fun.upper() != "Y":
+    converted = weight / 0.45
+    print("Weight in Lbs: " + str(converted))
+
+if unit.upper() == "K" and fun.upper() == "Y":
+    converted = weight / 0.45
+    print("Weight in Lbs: " + str(converted))
+    print("Fun Fact: that is equal to " + str((converted) / 14) + " in stone!")
+
+if unit.upper() == "L" and fun.upper() != "Y":
+    converted = weight * 0.45
+    print("Weight in kilos: " + str(converted))
+if unit.upper() == "L" and fun.upper() == "Y":
+    converted = weight * 0.45
+    print("Weight in kilos: " + str(converted))
+    print("Fun Fact: that is equal to " + str((converted) / 6.35029) + " in stone!")
