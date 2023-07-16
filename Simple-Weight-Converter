@@ -1,0 +1,54 @@
+print("Hello! Welcome to our simple weight converter! First thing's first-") 
+def run_1():
+        print("Do you know your weight in: ")
+        while True: 
+            unit = input("(K)g or (L)bs? ").upper()
+            if unit.startswith("K"):
+                kg = True
+                print("Now please enter only the numeric value of your weight :) ")
+                break
+            if unit.startswith("L") or unit == "POUNDS":
+                kg = False
+                print("Great! Now please enter only the numeric value of your weight :) ")
+                break
+
+
+
+        while True:  
+            try:
+                weight = float(input("Enter Weight: "))
+                break
+            except ValueError:
+                print("That's not a number I can work with. Try again")
+        fun = ask_yes_no("Do you like fun facts?")
+        if not fun: print("You're no fun :/") 
+        if kg and not fun:
+            converted = weight / 0.45
+            print("Weight in Lbs: " + str(converted))
+        if kg and fun:
+            converted = weight / 0.45
+            print("Weight in Lbs: " + str(converted))
+            print("Fun Fact: that is equal to " + str((converted) / 14) + " in stone!")
+        if not kg and not fun:
+            converted = weight * 0.45
+            print("Weight in kilos: " + str(converted))
+        if not kg and fun:
+            converted = weight * 0.45
+            print("Weight in kilos: " + str(converted))
+            print("Fun Fact: that is equal to " + str((converted) / 6.35029) + " in stone!")
+
+
+def ask_yes_no(message):
+        while True:
+            ans = input(f"{message} (Y)es or (N)o? ").upper()
+            if ans.startswith("Y"):
+                return True
+            if ans.startswith("N"):
+                return False
+while True:
+    run_1()
+    again = ask_yes_no("Would you like to go again?")
+    if not again:
+        print("Until next time~")
+        break
+        
